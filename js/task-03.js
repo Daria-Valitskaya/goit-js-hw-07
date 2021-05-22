@@ -22,6 +22,7 @@ const itemImages = ({ url, alt }) => {
 const imagesContainer = document.querySelector("ul#gallery");
 const makeImagesList = images.map(itemImages).join("");
 imagesContainer.insertAdjacentHTML("afterbegin", makeImagesList);
+
 console.log(makeImagesList);
 // const imagesEl = images.map((image) => {
 //   const itemEl = document.createElement("li");
