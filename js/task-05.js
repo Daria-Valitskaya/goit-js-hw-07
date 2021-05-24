@@ -8,7 +8,9 @@ const refs = {
 
 refs.input.addEventListener("input", onInputChange);
 function onInputChange(event) {
-  if (event.target.value.length > 0 && event.target.value === "") {
+  if (event.target.value.length > 0) {
     refs.name.textContent = event.target.value;
-  } else refs.name.textContent = "незнакомец";
+  } else if (event.target.value === "") {
+    refs.name.textContent = "незнакомец";
+  }
 }
