@@ -6,14 +6,14 @@ const inputEl = document.querySelector("#validation-input");
 const currentValue = inputEl.getAttribute("data-length");
 inputEl.addEventListener("blur", onInputBlur);
 function onInputBlur() {
-  if (inputEl.value.length !== parseInt(currentValue)) {
-    inputEl.classList.add("invalid");
-    inputEl.classList.remove("valid");
-  } else if (inputEl.value.length === parseInt(currentValue)) {
+  if (inputEl.value.length === parseInt(currentValue)) {
     inputEl.classList.add("valid");
     inputEl.classList.remove("invalid");
   } else if (inputEl.value.length === 0) {
     inputEl.classList.remove("valid");
     inputEl.classList.remove("invalid");
+  } else {
+    inputEl.classList.add("invalid");
+    inputEl.classList.remove("valid");
   }
 }
