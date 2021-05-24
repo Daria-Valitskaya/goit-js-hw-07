@@ -9,8 +9,11 @@ function onInputBlur(event) {
   if (event.target.value.length > parseInt(currentValue)) {
     inputEl.classList.add("invalid");
     inputEl.classList.remove("valid");
-  } else {
+  } else if (event.target.value.length <= parseInt(currentValue)) {
     inputEl.classList.add("valid");
+    inputEl.classList.remove("invalid");
+  } else if (event.target.value.length === 0) {
+    inputEl.classList.remove("valid");
     inputEl.classList.remove("invalid");
   }
 }
