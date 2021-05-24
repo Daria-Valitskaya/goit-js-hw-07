@@ -5,14 +5,14 @@
 const inputEl = document.querySelector("#validation-input");
 const currentValue = inputEl.getAttribute("data-length");
 inputEl.addEventListener("blur", onInputBlur);
-function onInputBlur(event) {
-  if (event.target.value.length > parseInt(currentValue)) {
+function onInputBlur() {
+  if (inputEl.value.length !== parseInt(currentValue)) {
     inputEl.classList.add("invalid");
     inputEl.classList.remove("valid");
-  } else if (event.target.value.length <= parseInt(currentValue)) {
+  } else if (inputEl.value.length === parseInt(currentValue)) {
     inputEl.classList.add("valid");
     inputEl.classList.remove("invalid");
-  } else if (event.target.value.length === 0) {
+  } else if (inputEl.value.length === 0) {
     inputEl.classList.remove("valid");
     inputEl.classList.remove("invalid");
   }
